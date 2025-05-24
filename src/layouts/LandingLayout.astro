@@ -2,7 +2,6 @@
 import PageLayout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 
-import { headerData } from '~/navigation';
 import type { MetaData } from '~/types';
 
 export interface Props {
@@ -19,11 +18,20 @@ const { metadata } = Astro.props;
   <Fragment slot="header">
     <slot name="header">
       <Header
-        links={headerData?.links[2] ? [headerData.links[2]] : undefined}
+        links={[
+          {
+            text: 'Chat Application',
+            href: 'https://chat.theconsciousai.eu'
+          },
+          {
+            text: 'GitHub Repository',
+            href: 'https://github.com/AstraBert/the-conscious-ai'
+          },
+        ],}
         actions={[
           {
-            text: 'Download',
-            href: 'https://github.com/onwidget/astrowind',
+            text: 'Get the presentation slides',
+            href: 'https://docs.google.com/presentation/d/1AsIZNZo7b_Op7LpPS8925psv5KFq8FQT/edit?usp=sharing&ouid=115858478176864292108&rtpof=true&sd=true',
           },
         ]}
         showToggleTheme
